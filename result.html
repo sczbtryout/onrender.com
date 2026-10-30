@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block content %}<section class="card result"><h1>Hasil Ujian / 考试结果</h1><div class="score">{{attempt.score}}%</div><p>{{attempt.exam.title_id}}</p><p>{{attempt.total}} soal</p><a class="btn" href="{{url_for('dashboard')}}">Kembali / 返回</a></section>{% endblock %}

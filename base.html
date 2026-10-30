@@ -1,0 +1,6 @@
+<!doctype html><html lang="{{ 'zh-CN' if lang=='zh' else 'id' }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCZB TRYOUT</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<header><div class="brand"><span class="logo">↪</span><div><b>SCZB <span>TRYOUT</span></b><small>Ujian Kenaikan Level · 员工晋级考试</small></div></div>
+<nav><a href="{{ url_for('dashboard') }}">Beranda</a><a href="{{ url_for('dashboard') }}">Tryout</a><a href="{{ url_for('ranking') }}">Ranking</a>{% if session.get('role')=='admin' %}<a href="{{ url_for('admin') }}">Admin</a>{% endif %}</nav>
+<div class="profile">{% if session.get('full_name') %}<b>{{ session.full_name }}</b><small>{{ session.employee_no }} · SCZB</small><a href="{{ url_for('logout') }}">Keluar / 退出</a>{% endif %}<a href="{{ url_for('language',value='id') }}">ID</a> | <a href="{{ url_for('language',value='zh') }}">中文</a></div></header>
+{% with messages=get_flashed_messages() %}{% if messages %}<div class="flash">{% for m in messages %}{{m}}{% endfor %}</div>{% endif %}{% endwith %}
+<main>{% block content %}{% endblock %}</main></body></html>

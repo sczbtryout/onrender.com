@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block content %}<section class="card"><h1>Ranking Peserta / 考生排名</h1><table><tr><th>Peringkat</th><th>Nama</th><th>Nilai terbaik</th></tr>{% for name,score in rows %}<tr><td>{{loop.index}}</td><td>{{name}}</td><td>{{score}}%</td></tr>{% else %}<tr><td colspan="3">Belum ada nilai</td></tr>{% endfor %}</table></section>{% endblock %}
